@@ -97,10 +97,6 @@ class WPDFG_Public {
 	 * Auto-inject cookies on product pages with mapped PDFs.
 	 */
 	public function auto_inject_cookies() {
-		if ( ! get_option( 'wpdfg_auto_inject', 1 ) ) {
-			return;
-		}
-
 		if ( ! is_singular() ) {
 			return;
 		}

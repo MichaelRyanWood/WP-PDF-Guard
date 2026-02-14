@@ -89,12 +89,6 @@ class WPDFG_Admin {
 			'default'           => 600,
 		) );
 
-		register_setting( 'wpdfg_settings', 'wpdfg_auto_inject', array(
-			'type'              => 'integer',
-			'sanitize_callback' => 'absint',
-			'default'           => 1,
-		) );
-
 		register_setting( 'wpdfg_settings', 'wpdfg_block_all_pdfs', array(
 			'type'              => 'integer',
 			'sanitize_callback' => 'absint',
@@ -117,14 +111,6 @@ class WPDFG_Admin {
 		);
 
 		add_settings_field(
-			'wpdfg_auto_inject',
-			__( 'Auto-inject Cookies', 'wp-pdf-guard' ),
-			array( $this, 'render_auto_inject_field' ),
-			'wpdfg-settings',
-			'wpdfg_general'
-		);
-
-		add_settings_field(
 			'wpdfg_block_all_pdfs',
 			__( 'Block All PDFs', 'wp-pdf-guard' ),
 			array( $this, 'render_block_all_pdfs_field' ),
@@ -142,19 +128,6 @@ class WPDFG_Admin {
 			'<input type="number" name="wpdfg_token_duration" value="%d" min="10" max="86400" class="small-text" /> <p class="description">%s</p>',
 			esc_attr( $value ),
 			esc_html__( 'How long (in seconds) a user can access the PDF after visiting the product page. Default: 600 (10 minutes).', 'wp-pdf-guard' )
-		);
-	}
-
-	/**
-	 * Render auto-inject settings field.
-	 */
-	public function render_auto_inject_field() {
-		$value = get_option( 'wpdfg_auto_inject', 1 );
-		printf(
-			'<label><input type="checkbox" name="wpdfg_auto_inject" value="1" %s /> %s</label><p class="description">%s</p>',
-			checked( $value, 1, false ),
-			esc_html__( 'Enabled', 'wp-pdf-guard' ),
-			esc_html__( 'Automatically set access cookies when a user visits a product page with mapped PDFs.', 'wp-pdf-guard' )
 		);
 	}
 

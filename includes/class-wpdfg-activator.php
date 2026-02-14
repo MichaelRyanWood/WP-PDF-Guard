@@ -50,7 +50,6 @@ class WPDFG_Activator {
 	 */
 	private static function set_default_options() {
 		add_option( 'wpdfg_token_duration', 600 );
-		add_option( 'wpdfg_auto_inject', 1 );
 		add_option( 'wpdfg_block_all_pdfs', 0 );
 	}
 

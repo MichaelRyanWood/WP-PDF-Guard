@@ -80,7 +80,6 @@ Go to **PDF Guard > Settings**:
 | Setting | Default | Description |
 |---|---|---|
 | Token Duration | 600 seconds (10 min) | How long PDF access lasts after visiting the product page |
-| Auto-inject Cookies | On | Automatically grant access when visiting a mapped product page |
 | Block All PDFs | Off | Block all PDFs (not just mapped ones). Unmapped PDFs return 403 |
 
 ## Requirements
