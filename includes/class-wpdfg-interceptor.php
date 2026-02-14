@@ -230,8 +230,10 @@ class WPDFG_Interceptor {
 		$filename    = basename( $file_path );
 		$disposition = ( 'download' === $action ) ? 'attachment' : 'inline';
 
-		// Prevent caching.
-		nocache_headers();
+		// Prevent browser from caching the PDF response.
+		header( 'Cache-Control: no-store, no-cache, must-revalidate, max-age=0' );
+		header( 'Pragma: no-cache' );
+		header( 'Expires: 0' );
 
 		header( 'Content-Type: application/pdf' );
 		header( 'Content-Disposition: ' . $disposition . '; filename="' . $filename . '"' );

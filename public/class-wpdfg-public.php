@@ -75,8 +75,9 @@ class WPDFG_Public {
 		$title = ! empty( $atts['label'] ) ? $atts['label'] : get_the_title( $attachment_id );
 		$title = esc_html( $title );
 
-		$view_url     = home_url( '/wpdfg-serve/' . $attachment_id . '/?wpdfg_action=view' );
-		$download_url = home_url( '/wpdfg-serve/' . $attachment_id . '/?wpdfg_action=download' );
+		$cache_bust   = time();
+		$view_url     = home_url( '/wpdfg-serve/' . $attachment_id . '/?wpdfg_action=view&t=' . $cache_bust );
+		$download_url = home_url( '/wpdfg-serve/' . $attachment_id . '/?wpdfg_action=download&t=' . $cache_bust );
 
 		$output  = '<div class="wpdfg-download-links">';
 		$output .= '<span class="wpdfg-pdf-title">' . $title . '</span>';
