@@ -1,0 +1,60 @@
+/**
+ * WP-PDF-Guard Admin Styles
+ */
+
+.wpdfg-add-mapping-form {
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	padding: 15px 20px;
+	margin-top: 15px;
+	max-width: 800px;
+}
+
+.wpdfg-add-mapping-form h2 {
+	margin-top: 0;
+}
+
+.wpdfg-status {
+	display: inline-block;
+	margin-left: 10px;
+	font-style: italic;
+}
+
+.wpdfg-status.success {
+	color: #46b450;
+}
+
+.wpdfg-status.error {
+	color: #dc3232;
+}
+
+#wpdfg-mappings-table .column-id {
+	width: 50px;
+}
+
+#wpdfg-mappings-table .column-shortcode code {
+	font-size: 12px;
+	background: #f0f0f0;
+	padding: 2px 6px;
+	cursor: pointer;
+}
+
+#wpdfg-mappings-table .column-actions {
+	width: 80px;
+}
+
+#wpdfg-mappings-table .column-created {
+	width: 150px;
+}
+
+/* jQuery UI Autocomplete overrides for WP admin */
+.ui-autocomplete {
+	max-height: 250px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 100100 !important;
+}
+
+.ui-autocomplete .ui-menu-item-wrapper {
+	padding: 5px 10px;
+}

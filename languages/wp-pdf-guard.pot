@@ -1,0 +1,227 @@
+# Copyright (C) 2026 WP-PDF-Guard
+# This file is distributed under the same license as the WP-PDF-Guard plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP-PDF-Guard 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-14T00:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI\n"
+"X-Domain: wp-pdf-guard\n"
+
+#: admin/class-wpdfg-admin.php
+msgid "PDF Guard"
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Mappings"
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Settings"
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "PDF Guard Settings"
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "General Settings"
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Token Duration (seconds)"
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "How long (in seconds) a user can access the PDF after visiting the product page. Default: 600 (10 minutes)."
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Auto-inject Cookies"
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Enabled"
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Automatically set access cookies when a user visits a product page with mapped PDFs."
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Permission denied."
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Are you sure you want to delete this mapping?"
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Saving..."
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Deleting..."
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "An error occurred. Please try again."
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Please select both a PDF and a page."
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Mapping created successfully."
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Mapping deleted."
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Invalid mapping ID."
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Failed to delete mapping."
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "WP-PDF-Guard — Nginx Configuration Required"
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "Your server uses Nginx. Please add the following rules to your Nginx configuration:"
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "PDF Guard — Mappings"
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "Add New Mapping"
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "PDF Attachment"
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "Search for a PDF..."
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "Start typing to search for PDF attachments."
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "Product Page"
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "Search for a page..."
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "The page users will be redirected to before accessing the PDF."
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "Add Mapping"
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "Existing Mappings"
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "No mappings found. Add one above to start protecting your PDFs."
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "ID"
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "PDF"
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "Shortcode"
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "Created"
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "Actions"
+msgstr ""
+
+#: admin/partials/mapping-page.php
+msgid "Delete"
+msgstr ""
+
+#: admin/partials/settings-page.php
+msgid "WP-PDF-Guard Settings"
+msgstr ""
+
+#: includes/class-wpdfg-interceptor.php
+msgid "Access denied."
+msgstr ""
+
+#: includes/class-wpdfg-interceptor.php
+msgid "File not found."
+msgstr ""
+
+#: includes/class-wpdfg-interceptor.php
+msgid "Access denied. This PDF is not available for direct access."
+msgstr ""
+
+#: includes/class-wpdfg-interceptor.php
+msgid "Access denied. Please visit the product page first."
+msgstr ""
+
+#: includes/class-wpdfg-mapping.php
+msgid "Invalid PDF or page ID."
+msgstr ""
+
+#: includes/class-wpdfg-mapping.php
+msgid "The specified attachment does not exist."
+msgstr ""
+
+#: includes/class-wpdfg-mapping.php
+msgid "The specified attachment is not a PDF."
+msgstr ""
+
+#: includes/class-wpdfg-mapping.php
+msgid "The specified page does not exist."
+msgstr ""
+
+#: includes/class-wpdfg-mapping.php
+msgid "This mapping already exists."
+msgstr ""
+
+#: includes/class-wpdfg-mapping.php
+msgid "Failed to create mapping."
+msgstr ""
+
+#: public/class-wpdfg-public.php
+msgid "View PDF"
+msgstr ""
+
+#: public/class-wpdfg-public.php
+msgid "Download PDF"
+msgstr ""
+
+#: admin/class-wpdfg-admin.php
+msgid "You do not have permission to access this page."
+msgstr ""
