@@ -38,7 +38,7 @@ WP-PDF-Guard intercepts direct PDF requests and redirects users to the product p
 
 ### From ZIP (recommended)
 
-1. Download the latest release ZIP from [Releases](https://github.com/MichaelRyanWood/WP-PDF-Guard/releases)
+1. Download [wp-pdf-guard.zip](https://github.com/MichaelRyanWood/WP-PDF-Guard/raw/main/wp-pdf-guard.zip)
 2. In WordPress, go to **Plugins > Add New > Upload Plugin**
 3. Upload the ZIP and click **Install Now**
 4. Click **Activate**
