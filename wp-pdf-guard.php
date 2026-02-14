@@ -1,12 +1,13 @@
 <?php
 /**
  * Plugin Name:       WP-PDF-Guard
- * Plugin URI:        https://github.com/your-username/wp-pdf-guard
+ * Plugin URI:        https://github.com/MichaelRyanWood/WP-PDF-Guard/
  * Description:       Protects PDF downloads by requiring users to visit a product page (with ads) before accessing the file. Uses stateless HMAC-SHA256 signed cookies.
  * Version:           1.0.0
  * Requires at least: 5.6
  * Requires PHP:      7.4
- * Author:            Your Name
+ * Author:            Michael Wood
+ * Author URI:        https://github.com/MichaelRyanWood/WP-PDF-Guard/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       wp-pdf-guard

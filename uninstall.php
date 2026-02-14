@@ -18,6 +18,7 @@ $wpdb->query( "DROP TABLE IF EXISTS {$table_name}" ); // phpcs:ignore WordPress.
 // Delete options.
 delete_option( 'wpdfg_token_duration' );
 delete_option( 'wpdfg_auto_inject' );
+delete_option( 'wpdfg_block_all_pdfs' );
 delete_option( 'wpdfg_db_version' );
 
 // Remove .htaccess rules.

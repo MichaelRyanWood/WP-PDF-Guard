@@ -99,6 +99,19 @@ class WPDFG_Mapping {
 			return new WP_Error( 'invalid_page', __( 'The specified page does not exist.', 'wp-pdf-guard' ) );
 		}
 
+		// A PDF can only be mapped to one page.
+		$existing_page = self::get_page_for_pdf( $pdf_id );
+		if ( $existing_page && $existing_page !== $page_id ) {
+			return new WP_Error(
+				'pdf_already_mapped',
+				sprintf(
+					/* translators: %s: existing page title or ID */
+					__( 'This PDF is already mapped to "%s". A PDF can only be linked to one page.', 'wp-pdf-guard' ),
+					get_the_title( $existing_page ) ?: '#' . $existing_page
+				)
+			);
+		}
+
 		$table  = self::table_name();
 		$result = $wpdb->insert(
 			$table,

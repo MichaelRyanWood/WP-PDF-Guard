@@ -1,5 +1,5 @@
 === WP-PDF-Guard ===
-Contributors: yourname
+Contributors: michaelryanwood
 Tags: pdf, protection, download, guard, ads
 Requires at least: 5.6
 Tested up to: 6.7

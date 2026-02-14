@@ -36,7 +36,7 @@ class WPDFG_Activator {
 			page_id BIGINT UNSIGNED NOT NULL,
 			created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 			PRIMARY KEY  (id),
-			UNIQUE KEY pdf_page (pdf_id, page_id)
+			UNIQUE KEY pdf_unique (pdf_id)
 		) {$charset_collate};";
 
 		require_once ABSPATH . 'wp-admin/includes/upgrade.php';
@@ -51,6 +51,7 @@ class WPDFG_Activator {
 	private static function set_default_options() {
 		add_option( 'wpdfg_token_duration', 600 );
 		add_option( 'wpdfg_auto_inject', 1 );
+		add_option( 'wpdfg_block_all_pdfs', 0 );
 	}
 
 	/**

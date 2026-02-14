@@ -144,9 +144,15 @@ class WPDFG_Interceptor {
 		}
 
 		// No valid token — redirect to mapped page.
-		$page_id = WPDFG_Mapping::get_page_for_pdf( $attachment_id );
+		$page_id       = WPDFG_Mapping::get_page_for_pdf( $attachment_id );
+		$block_all     = get_option( 'wpdfg_block_all_pdfs', 0 );
 
 		if ( ! $page_id ) {
+			if ( ! $block_all ) {
+				// Unmapped PDF — allow direct access when "Block All" is off.
+				$this->serve_file( $absolute_path, 'view' );
+				return;
+			}
 			status_header( 403 );
 			wp_die( esc_html__( 'Access denied. This PDF is not available for direct access.', 'wp-pdf-guard' ), '', array( 'response' => 403 ) );
 		}

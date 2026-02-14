@@ -14,10 +14,12 @@
 					term: request.term
 				}, response);
 			},
-			minLength: 2,
+			minLength: 0,
 			select: function (event, ui) {
 				$('#wpdfg-pdf-id').val(ui.item.id);
 			}
+		}).on('focus', function () {
+			$(this).autocomplete('search', '');
 		});
 
 		// Page autocomplete.
@@ -29,10 +31,12 @@
 					term: request.term
 				}, response);
 			},
-			minLength: 2,
+			minLength: 0,
 			select: function (event, ui) {
 				$('#wpdfg-page-id').val(ui.item.id);
 			}
+		}).on('focus', function () {
+			$(this).autocomplete('search', '');
 		});
 
 		// Save mapping.

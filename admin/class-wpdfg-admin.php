@@ -95,6 +95,12 @@ class WPDFG_Admin {
 			'default'           => 1,
 		) );
 
+		register_setting( 'wpdfg_settings', 'wpdfg_block_all_pdfs', array(
+			'type'              => 'integer',
+			'sanitize_callback' => 'absint',
+			'default'           => 0,
+		) );
+
 		add_settings_section(
 			'wpdfg_general',
 			__( 'General Settings', 'wp-pdf-guard' ),
@@ -114,6 +120,14 @@ class WPDFG_Admin {
 			'wpdfg_auto_inject',
 			__( 'Auto-inject Cookies', 'wp-pdf-guard' ),
 			array( $this, 'render_auto_inject_field' ),
+			'wpdfg-settings',
+			'wpdfg_general'
+		);
+
+		add_settings_field(
+			'wpdfg_block_all_pdfs',
+			__( 'Block All PDFs', 'wp-pdf-guard' ),
+			array( $this, 'render_block_all_pdfs_field' ),
 			'wpdfg-settings',
 			'wpdfg_general'
 		);
@@ -141,6 +155,19 @@ class WPDFG_Admin {
 			checked( $value, 1, false ),
 			esc_html__( 'Enabled', 'wp-pdf-guard' ),
 			esc_html__( 'Automatically set access cookies when a user visits a product page with mapped PDFs.', 'wp-pdf-guard' )
+		);
+	}
+
+	/**
+	 * Render block-all-PDFs settings field.
+	 */
+	public function render_block_all_pdfs_field() {
+		$value = get_option( 'wpdfg_block_all_pdfs', 0 );
+		printf(
+			'<label><input type="checkbox" name="wpdfg_block_all_pdfs" value="1" %s /> %s</label><p class="description">%s</p>',
+			checked( $value, 1, false ),
+			esc_html__( 'Enabled', 'wp-pdf-guard' ),
+			esc_html__( 'Block direct access to ALL PDFs, even those not explicitly mapped. When off, only mapped PDFs are protected.', 'wp-pdf-guard' )
 		);
 	}
 
@@ -300,6 +327,12 @@ class WPDFG_Admin {
 
 		$search = isset( $_GET['term'] ) ? sanitize_text_field( wp_unslash( $_GET['term'] ) ) : '';
 
+		// Exclude PDFs that are already mapped.
+		global $wpdb;
+		$table      = $wpdb->prefix . 'wpdfg_mappings';
+		$mapped_ids = $wpdb->get_col( "SELECT pdf_id FROM {$table}" ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$mapped_ids = array_map( 'absint', $mapped_ids );
+
 		$args = array(
 			'post_type'      => 'attachment',
 			'post_mime_type' => 'application/pdf',
@@ -307,6 +340,10 @@ class WPDFG_Admin {
 			'posts_per_page' => 20,
 			's'              => $search,
 		);
+
+		if ( ! empty( $mapped_ids ) ) {
+			$args['post__not_in'] = $mapped_ids;
+		}
 
 		$query   = new WP_Query( $args );
 		$results = array();
