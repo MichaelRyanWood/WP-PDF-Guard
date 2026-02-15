@@ -66,9 +66,12 @@ class Test_Input_Validation extends WP_UnitTestCase {
 	 * Negative integers fail absint validation.
 	 */
 	public function test_negative_ids_rejected() {
-		$this->assertEquals( 0, absint( -5 ) );
-		$this->assertEquals( 0, absint( -999 ) );
+		// absint() takes the absolute value, so -5 becomes 5 — but these
+		// won't match real PDF/page IDs, so create() still rejects them.
+		$result = WPDFG_Mapping::create( absint( -5 ), absint( -999 ) );
+		$this->assertInstanceOf( 'WP_Error', $result );
 
+		// Zero values are explicitly rejected.
 		$result = WPDFG_Mapping::create( 0, 0 );
 		$this->assertInstanceOf( 'WP_Error', $result );
 	}

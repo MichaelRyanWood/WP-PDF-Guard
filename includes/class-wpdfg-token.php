@@ -51,18 +51,20 @@ class WPDFG_Token {
 
 		$secure = is_ssl();
 
-		setcookie(
-			$cookie_name,
-			$token,
-			array(
-				'expires'  => time() + $duration,
-				'path'     => COOKIEPATH,
-				'domain'   => COOKIE_DOMAIN,
-				'secure'   => $secure,
-				'httponly'  => true,
-				'samesite' => 'Lax',
-			)
-		);
+		if ( ! headers_sent() ) {
+			setcookie(
+				$cookie_name,
+				$token,
+				array(
+					'expires'  => time() + $duration,
+					'path'     => COOKIEPATH,
+					'domain'   => COOKIE_DOMAIN,
+					'secure'   => $secure,
+					'httponly'  => true,
+					'samesite' => 'Lax',
+				)
+			);
+		}
 
 		// Make the cookie available in the current request too.
 		$_COOKIE[ $cookie_name ] = $token;

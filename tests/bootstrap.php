@@ -37,3 +37,7 @@ tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 
 // Start up the WP testing environment.
 require $_tests_dir . '/includes/bootstrap.php';
+
+// Manually run activation (test suite doesn't fire activation hooks).
+require_once WPDFG_PLUGIN_DIR . 'includes/class-wpdfg-activator.php';
+WPDFG_Activator::activate();
