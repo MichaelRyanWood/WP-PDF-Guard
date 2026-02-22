@@ -1,0 +1,2 @@
+# Treat ZIP as binary to prevent line-ending corruption
+*.zip binary
